@@ -919,14 +919,5 @@ namespace 交互式音乐播放器
 
         #endregion
 
-        private void WindowX_StateChanged(object sender, EventArgs e)
-        {
-            var tmp = (Window)sender;
-            if (tmp.WindowState == WindowState.Minimized)
-            {
-                tmp.Hide();
-            
-            }
-        }
     }
 }
