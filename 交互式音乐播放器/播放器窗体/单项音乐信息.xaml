@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="交互式音乐播放器.控件.音频文件项"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:交互式音乐播放器.控件"
+             xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver" 
+            
+              >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*" MaxWidth="60" MinWidth="50"></ColumnDefinition>
+            <ColumnDefinition Width="85*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--#region 碟片-->
+        <Border Grid.Column="0"  CornerRadius="5" BorderThickness="2"  >
+            <Border.Background>
+                <ImageBrush x:Name="专辑图片" ImageSource="/Resources/默认专辑图.png"/>
+            </Border.Background>
+
+        </Border>
+        <Grid Grid.Column="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60*"></RowDefinition>
+                <RowDefinition Height="40*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="永续"
+                        Name="循环类型"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        pu:ButtonHelper.CornerRadius="4" Background="#26000000" Foreground="#B2FFFFFF"
+                        pu:ButtonHelper.Icon="♾️">
+                </Button>
+                <TextBlock  Name="曲名" Text="文件名/曲名" FontSize="16 " Foreground="White" VerticalAlignment="Center"></TextBlock>
+
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+
+                <TextBlock Name="详细信息" Text="作者等常用信息" FontSize="14" Foreground="#FF868686" Margin="6 0 0 0"></TextBlock>
+
+            </Grid>
+
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</UserControl>
