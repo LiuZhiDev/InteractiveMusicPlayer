@@ -7,7 +7,6 @@
         xmlns:local="clr-namespace:交互式音乐播放器"
         xmlns:sd="clr-namespace:交互式音乐播放器.控件"
         mc:Ignorable="d"
-        StateChanged="WindowX_StateChanged"
         Title="播放器" Height="660" Width="440" MinHeight="125" MinWidth="424" Closing="WindowX_Closing" >
 
     <!--#region 玻璃特效与标题栏-->
