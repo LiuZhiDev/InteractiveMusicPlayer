@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="交互音乐播放器.UI.附加控件.智能提示"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ap="clr-namespace:交互音乐播放器.UI.附加控件"
+             xmlns:cp="clr-namespace:交互音乐播放器.UI.附加控件"
+             xmlns:local="clr-namespace:交互音乐播放器.UI.附加控件"
+            xmlns:pu="clr-namespace:Panuon.WPF.UI;assembly=Panuon.WPF.UI"
+             mc:Ignorable="d" 
+           d:DesignHeight="120" d:DesignWidth="500">
+    <UserControl.Resources>
+        <Style x:Key="图标样式" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FFC1C1C1"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource PanuonIconFont}"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Foreground" Value="DarkKhaki"></Setter>
+            <Setter Property="Margin" Value="0 2 6 0"></Setter>
+        </Style>
+        <Style x:Key="标题样式" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FFC1C1C1"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Foreground" Value="LightGray"></Setter>
+            <Setter Property="Margin" Value="0 0 6 0"></Setter>
+        </Style>
+        <Style x:Key="语法样式" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FFC1C1C1"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Foreground" Value="Gray"></Setter>
+            <Setter Property="Margin" Value="0 0 6 0"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Border Padding="5" Background="#424245" BorderBrush="#4D4D50" BorderThickness="3">
+        <StackPanel Name="主控件" MaxWidth="400">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="&#xe9d2;" Style="{StaticResource 图标样式}" ></TextBlock>
+                <TextBlock Name="语法标题" Text="{Binding 标题, Mode=TwoWay}"  Style="{StaticResource 标题样式}" ></TextBlock>
+                <TextBlock Name="语法内容" Text="{Binding 语法, Mode=TwoWay}"  Style="{StaticResource 语法样式}" ></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock  Name="提示内容"  Text="{Binding 提示, Mode=TwoWay}"  
+                            MaxWidth="400"
+                            Style="{StaticResource 语法样式}" TextWrapping="WrapWithOverflow"></TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" ShadowDepth="5" Opacity="0.3"></DropShadowEffect>
+        </Border.Effect>
+    </Border>
+</UserControl>

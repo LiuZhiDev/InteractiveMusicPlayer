@@ -1,0 +1,59 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:交互音乐播放器.UI.附加控件"
+      
+             xmlns:UI="clr-namespace:交互音乐播放器.UI" x:Class="交互音乐播放器.UI.附加控件.文件项"
+      
+             mc:Ignorable="d" 
+             >
+
+    <Border  CornerRadius="14" MaxHeight="60" >
+        <Grid Margin="8 0 8 0" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" MaxWidth="80"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="17*" MaxWidth="90"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.RowSpan="2" >
+                <Image x:Name="专辑背景" Source="/图像资源/默认专辑背景.png"/>
+            </Border>
+            <TextBlock Text="曲目名称" x:Name="曲目名称信息栏"
+                   FontSize="18" VerticalAlignment="Bottom"
+                    Margin="12 0 0 0"
+                   FontFamily="微软雅黑 Light"
+                   Grid.Column="1" Foreground="#B2FFFFFF"/>
+            <TextBlock Text="161BPM 3/4" x:Name="速度信息栏"
+                   FontSize="13" VerticalAlignment="Bottom"
+                   HorizontalAlignment="Center"
+             
+                   Grid.Column="2" Foreground="#B2FFFFFF"/>
+            <StackPanel  Grid.Column="1" Grid.Row="1" Orientation="Horizontal" 
+                     VerticalAlignment="Top" Margin="12 6 0 0">
+                <TextBlock x:Name="作者名称信息" Text="作者名称" FontSize="14"
+                    Foreground="#B2FFFFFF"/>
+                <TextBlock  Text=" - " FontSize="14" 
+                   Foreground="#B2FFFFFF"/>
+                <TextBlock x:Name="专辑名称信息" Text="《专辑名称》" FontSize="14" 
+                   Foreground="#B2FFFFFF"/>
+            </StackPanel>
+            <Border x:Name="循环类型栏" Grid.Column="2" Grid.Row="1" MinHeight="23" MinWidth="78"
+                VerticalAlignment="Top" 
+                Margin="0 5 0 0"
+                HorizontalAlignment="Center"
+                Background="#FF0A8264" CornerRadius="6">
+                <TextBlock Text="循环类型" x:Name="循环类型名称"
+                   FontSize="14" HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Grid.Column="1" Foreground="#B2FFFFFF"/>
+            </Border>
+        </Grid>
+    </Border>
+  
+</UserControl>

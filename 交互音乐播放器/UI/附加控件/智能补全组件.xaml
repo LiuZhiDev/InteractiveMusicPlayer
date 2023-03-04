@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="交互音乐播放器.UI.附加控件.智能补全组件"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:交互音乐播放器.UI.附加控件"
+             xmlns:ap="clr-namespace:交互音乐播放器.UI.附加控件"
+             xmlns:cp="clr-namespace:交互音乐播放器.UI.附加控件"
+             xmlns:pu="clr-namespace:Panuon.WPF.UI;assembly=Panuon.WPF.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+    <Grid>
+        <Border Background="#FF252526" Padding="5" CornerRadius="10">
+            <Grid  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="90*"></RowDefinition>
+                </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="指令"  HorizontalAlignment="Center" FontSize="16"  
+                   Foreground="#FFB3B3B3"  Background="#FF252526"></TextBlock>
+        <ListBox Grid.Row="1" Name="选项集" Background="#FF252526" HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Padding="6"
+                    MaxHeight="160" MaxWidth="300"  MinWidth="210" FontSize="15"
+                     pu:ListBoxHelper.ItemsHoverBackground="DarkBlue"
+                     pu:ListBoxHelper.ItemsSelectedBackground="#3D3D3D"
+                     FontFamily="{StaticResource PanuonIconFont}"
+                     Width="auto" Foreground="#FFB3B3B3" 
+                     BorderBrush="{x:Null}" SelectionChanged="选项集_SelectionChanged">
+      
+
+            <!-- 设置ListBoxItem样式 -->
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <!-- 设置控件模板 -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border Background="{TemplateBinding Background}" Padding="8" >
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="&#xe9d2; " Foreground="#FFBB9950" ></TextBlock>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                 TextBlock.Foreground="{TemplateBinding Foreground}"/>
+                                    </StackPanel>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <!-- 设置触发器 -->
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="#AAABABAB"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#55909090"/>
+                            <Setter Property="Foreground" Value="Gainsboro"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        </Grid>
+        </Border>
+        <Popup Name="文本提示" IsOpen="True" AllowsTransparency="True"  
+               PlacementTarget="{Binding ElementName=选项集}" Placement="Right" >
+            <cp:智能提示 x:Name="语法提示器"></cp:智能提示>
+        </Popup>
+    </Grid>
+</UserControl>

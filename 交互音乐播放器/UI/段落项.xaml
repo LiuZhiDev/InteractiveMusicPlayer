@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="交互音乐播放器.UI.附加控件.段落项"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:交互音乐播放器"
+             mc:Ignorable="d" 
+             xmlns:pu="clr-namespace:Panuon.WPF.UI;assembly=Panuon.WPF.UI"
+             d:DesignHeight="100" d:DesignWidth="400">
+    <Grid Margin="20 6 6 10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="25*" MinWidth="80"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBlock Name="文件名显示"  Text="{Binding 文件名}" Foreground="#B2FFFFFF" FontSize="16" 
+                        VerticalAlignment="Center" Margin="0 0 6 0" ></TextBlock>
+            <TextBox  Name="章节名显示"  Text="章节名" Foreground="#B2FFFFFF"  FontSize="16" VerticalAlignment="Center"
+                      pu:TextBoxHelper.CornerRadius="10" Background="#4CFFFFFF" Margin="0 0 6 0" BorderBrush="#72ABADB3"></TextBox>
+            <TextBox  Name="节拍显示"  Text="3/4" Foreground="#B2FFFFFF"  FontSize="16" VerticalAlignment="Center"
+                      pu:TextBoxHelper.CornerRadius="10" Background="#4CFFFFFF" Margin="0 0 6 0" BorderBrush="#72ABADB3"></TextBox>
+            <TextBox  Name="BPM显示"  Text="165BPM" Foreground="#B2FFFFFF"  FontSize="16" VerticalAlignment="Center"
+                      pu:TextBoxHelper.CornerRadius="10" Background="#4CFFFFFF" Margin="0 0 6 0" BorderBrush="#72ABADB3"></TextBox>
+            <TextBox  Name="Offset显示"  Text="+0" Foreground="#B2FFFFFF"  FontSize="16" VerticalAlignment="Center"
+                      pu:TextBoxHelper.CornerRadius="10" Background="#4CFFFFFF" Margin="0 0 6 0" BorderBrush="#72ABADB3"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <pu:Switch Name="允许循环" CheckedBackground="#FF00E295"  Background="#7F00754D" ToggleBrush="#FF459C66" BorderBrush="#7F007D07"></pu:Switch>
+            <TextBlock  Text="循环" Foreground="#B2FFFFFF" FontSize="14" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>
